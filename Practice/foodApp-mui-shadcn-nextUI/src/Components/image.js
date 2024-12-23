@@ -1,4 +1,4 @@
-const BASE_PATH = "image";
+const BASE_PATH = "images";
 
 export const IMAGES = {
   slider: [
