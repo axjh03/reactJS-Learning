@@ -2,13 +2,12 @@ import "./App.css";
 import Navbar from "./Components/Navbar";
 import LoadScreen from "./Components/LoadScreen";
 import { useState } from "react";
-import ImageViewer from "./Components/ImageViewer";
-import {GridContainer} from "./Components/GridContainer";
-import { Grid } from "@nextui-org/react";
-
-
+import ImageViewer from "./Components/EmblaCarousel/js/ImageSider"
+import LandText from "./Components/LandText";
 function App() {
-  let [load, setLoad] = useState(false);
+
+  
+  let [load, setLoad] = useState(true);
   setTimeout(()=>{setLoad(false)},3000)
   return (
     <>
@@ -17,8 +16,8 @@ function App() {
       ) : (
         <>
           <Navbar />
-          <ImageViewer />
-          <GridContainer />
+          <LandText />
+          <ImageViewer/>
         </>
       )}
     </>

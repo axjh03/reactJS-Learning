@@ -15,7 +15,6 @@ export const TheLogo = () => {
   return <img src="/avatar.svg" alt="Logo" width="36" height="36" />;
 };
 
-
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -57,13 +56,13 @@ export default function App() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand style={{gap:"8px"}}>
+        <NavbarBrand style={{ gap: "10px" }}>
           <TheLogo />
           <p className="font-bold text-inherit">Kalinchok</p>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-10" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#">
             Features
@@ -84,11 +83,6 @@ export default function App() {
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>
         </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
@@ -97,7 +91,11 @@ export default function App() {
             <Link
               className="w-full"
               color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                index === 2
+                  ? "primary"
+                  : index === menuItems.length - 1
+                  ? "danger"
+                  : "foreground"
               }
               href="#"
               size="lg"
