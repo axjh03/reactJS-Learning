@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.image-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

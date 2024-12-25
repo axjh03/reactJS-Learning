@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+
 import {
   Navbar,
   NavbarBrand,
@@ -17,19 +19,24 @@ export const TheLogo = () => {
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  let [activeItem, setActiveItem] = useState("Home");
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "Menu",
+    "Contact",
+    "Home",
+    "Photos",
+    "Locations",
+    "Contact Aalok",
+    "Logout",
+    "Help",
   ];
+
+  // Created a function to handle navbar item clicks
+  const handleItemClick = (item) => {
+    setActiveItem(item); // Update active item
+    setIsMenuOpen(false); // Close mobile menu
+  };
 
   return (
     <Navbar
@@ -58,27 +65,24 @@ export default function App() {
         />
         <NavbarBrand style={{ gap: "10px" }}>
           <TheLogo />
-          <p className="font-bold text-inherit">Kalinchok</p>
+          <p className="font-bold text-inherit">Kalinchowk</p>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-10" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link aria-current="page" href="#">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
+        {menuItems.slice(0, 5).map((item) => (
+          <NavbarItem key={item} isActive={activeItem === item}>
+            <Link
+              color={activeItem === item ? "primary" : "foreground"}
+              href="#"
+              onClick={() => handleItemClick(item)}
+            >
+              {item}
+            </Link>
+          </NavbarItem>
+        ))}{" "}
       </NavbarContent>
+
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>
