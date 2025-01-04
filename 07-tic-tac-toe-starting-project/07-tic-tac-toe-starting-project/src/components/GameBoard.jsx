@@ -16,27 +16,15 @@ export default function GameBoard(props) {
     gameBoard[row][col] = player;
   }
 
-  // const [gameBoard, setGameBoard] = useState(initialGameBoard);
-
-  // function handleSelectSquare(rowIndex, colIndex) {
-  //   setGameBoard((previousBoard) => {
-  //       const updatedBoard = structuredClone(previousBoard); 
-  //       updatedBoard[rowIndex][colIndex] = props.activePlayerSymbol; // Update the cell
-  //       return updatedBoard;
-  //   });
-  //   props.onSelectSquare();
-  
-  // }
-
   return (
     <ol id="game-board">
       {gameBoard.map((row, rowIndex) => (
         <li key={rowIndex}>
           <ol>
-            {row.map((playerSymbol_Column, colIndex) => (
+            {row.map((playerSymbol, colIndex) => (
               <li key={colIndex}>
-                <button onClick={() => props.onSelectSquare(rowIndex, colIndex)}>
-                  {playerSymbol_Column}
+                <button onClick={() => props.onSelectSquare(rowIndex, colIndex)} disabled={playerSymbol!==null}>
+                  {playerSymbol}
                 </button>
               </li>
             ))}
