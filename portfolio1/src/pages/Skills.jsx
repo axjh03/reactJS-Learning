@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import SkillSliderRenderer from "../components/Skills/SkillSliderRenderer";
 
 function Skills() {
   return (
-    <div>Skills</div>
-  )
+    <>
+      <SkillSliderRenderer />
+    </>
+  );
 }
 
-export default Skills
+export default SkillSliderRenderer;
