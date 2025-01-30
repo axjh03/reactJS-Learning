@@ -5,7 +5,7 @@ import "../../pages/pagesCSS/Slider.css";
 
 function SkillSliderRenderer() {
   return (
-    <div className="p-4">
+    <div className="p-4 px-10 sm:px-16 md:px-20 lg:px-35">
         <SkillsSlider skills={top_skills} />
       </div>
   )

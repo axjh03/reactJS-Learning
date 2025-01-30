@@ -52,7 +52,7 @@ export const top_skills = [
   },
 ];
 
-export const others = [
+export const general_skills = [
   {
     Name: "Java",
     ImageURL:

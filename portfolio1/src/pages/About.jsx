@@ -2,17 +2,11 @@ import React from "react";
 
 function About() {
   return (
-    <div class="h-screen">
+    <div class=" ">
       <div>
-        <h1 class="">About Me</h1>
-        <button
-          href="https://rupaut98.github.io/#contact"
-          onClick={() => {
-            window.open("https://rupaut98.github.io/#contact", "_blank");
-          }}
-        >
-          Resume
-        </button>
+        <h2>Hello</h2>
+        <h1>I'm Alok Jha</h1>
+        <p>I make systems that are functional and works XD</p>
       </div>
     </div>
   );

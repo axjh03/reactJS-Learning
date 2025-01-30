@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "./animation.css";
+@import "./animation.scss";
 
 .light a {
   color: #16a34a; /* Green-600 */

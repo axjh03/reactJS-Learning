@@ -3,7 +3,7 @@
 import * as React from "react";
 import SkillCard from "./SkillCard";
 
-export default function SkillsSlider({ skills, scrollSpeed = 50 }) {
+export default function SkillsSlider({ skills, scrollSpeed = 2 }) {
   const [isPaused, setIsPaused] = React.useState(false);
   const containerRef = React.useRef(null);
   const contentRef = React.useRef(null);
@@ -21,7 +21,7 @@ export default function SkillsSlider({ skills, scrollSpeed = 50 }) {
       if (!lastTimestampRef.current) lastTimestampRef.current = timestamp;
 
       const elapsed = timestamp - lastTimestampRef.current;
-      const pixelsToScroll = (scrollSpeed * elapsed) / 1000; // Faster auto-scroll
+      const pixelsToScroll = (scrollSpeed * elapsed) / 50; // Faster auto-scroll
 
       containerRef.current.scrollLeft += pixelsToScroll;
 

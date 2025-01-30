@@ -13,10 +13,10 @@ const App = () => {
 
   return (
     <div className={theme === "dark" ? "dark" : "light"}>
-      <Navbar />
-      {/* <About /> */}
+      {/* <Navbar /> */}
+      <About />
       <Experience />
-      {/* <Skills /> */}
+      <Skills />
       <Contact />
     </div>
   );
